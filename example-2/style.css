@@ -38,7 +38,35 @@ nav a:hover{
 
 /* social menu base styles */
 
+a.tw { /* This makes the facebook and twitter on the nav to become pictures instead of text */
+  background: url(img/tw.png) no-repeat center; /* no-repeat avoids repeating the img and center centers it */
+  background-size: 80%;
+}
+
+a.fb { 
+  background: url(img/fb.png) no-repeat center; 
+  background-size: 80%;
+}
+
+.social a {
+  text-indent: -10000px; /* Makes the ul text fb and tw dissapear */
+}
+
+.social {
+  max-width: 80px; /* Avoids the icons to get bigger than 80 px */
+  margin: 0 auto; /* On small screen with burguer menu centrilizes icons */
+}
+
 /* flex styles */
+
+nav ul.social {
+  flex: 1 1 0; /* flex-grow 1, flex-shrink 1 and flex-basis 0 */
+  display: flex; /* We make icons to align horizontally but they shrink so...*/ 
+}
+
+nav ul.social li {
+  flex: 1 1 0; /* ... we make icons to grow and shrinks occupaying all the space */
+}
 
 @media screen and (min-width: 768px){
 
@@ -48,6 +76,16 @@ nav ul{
 
 nav li{
   flex: 1 1 0;
+}
+
+nav {
+  display: flex; /* Here we are making both ul lists set one next to the other on the same row */
+  justify-content: space-between; /* Here we are giving space between both ul lists so social networks appear on the right separately from the main menu */
+
+}
+
+.social {
+  margin: 0; /* Avoids that when in large screens the icons have margin or left/right and keeps them aligned on the left */
 }
     
 } /* end media 768 */

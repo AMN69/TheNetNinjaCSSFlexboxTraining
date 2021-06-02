@@ -62,7 +62,22 @@ a.fb{
 
 /* grid vs flex base styles */
 
+#blocks {
+  margin: 20px;
+}
 
+article {
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 10px;
+  box-sizing: border-box; /* Makes the padding not add pixels but take space within the box */
+}
+
+article h2 {
+  text-align: center;
+  font-size: 20px;
+  margin: 10px 0;
+}
 
 /* flex styles */
 
@@ -93,6 +108,18 @@ nav{
 ul.social{
   margin: 0;
 }
-    
+
+/* For screens over 768px we create a grid layout for the articles */
+
+#blocks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* distributes 4% of the left articles space */
+}
+
+article {
+  flex: 0 1 32%; /* here we are not growing them (to avoid eating the free space), shrink proportionally and giving 32% of the space */
+}
+
 } /* end media 768 */
 

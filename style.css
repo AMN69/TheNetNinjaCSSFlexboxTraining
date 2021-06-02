@@ -13,3 +13,122 @@ body{
     margin: 0 auto;
 }
 
+/* Important note: when we change the flex-flow from row to column the main axis 
+  changes from being horizontal to being vertical and so the cross axis does but
+  from being vertical (flex-flow: row) to being horizontal (flex-flow: column) */
+.flex-container{
+    display: flex; /* Makes children flex */
+    background: white;
+    flex-wrap: wrap;
+    flex-flow: row;
+    justify-content: center; /* this only applies to the main axis, so when the flew-flow is column the main axis is vertical */
+    align-items: center; /* unless justify-content this only applies to the cross axis (when row vertical and when column horizontal */
+    height: 200px; /* by limiting the vertical px from infinite to 800 now the flex-end will work */
+}
+
+.box{
+    height: 100px;
+    flex: 0 0 100px; /* This controls the heigth instead of the width because flex-flow is column */
+}
+
+.one{
+    background: red;
+    
+}
+
+.two{
+    background: blue;
+    
+}
+
+.three{
+    background: green;
+    
+}
+
+#blocks {
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+#blocks div {
+    flex: 0 0 100px;
+    padding: 40px 0;
+    text-align: center;
+    background: #ccc;
+}
+
+/* By default all have no order (0) but when we change the order the position on the screen changes */
+.ten{order: 3}
+.eleven{order: 2}
+.twelve{order: 1}
+.thirteen{order:0}
+
+/* .box{
+    height: 100px;
+    min-width: 100px;
+    flex-grow: 1;
+}
+
+.one{
+    background: red;
+    flex-grow: 1; /* Expands elements in the available space *//*
+}
+
+.two{
+    background: blue;
+    flex-grow: 2; /* This grows 2 times box one *//*
+}
+
+.three{
+    background: green;
+    flex-grow: 3; /* This grows 3 times box one *//*
+}
+ */
+/*
+.boxbis{
+    height: 100px;
+    width: 320px;
+}
+
+.four{
+    background: red;
+    flex-shrink: 1; /* Shrinks elements in the available space *//*
+}
+
+.five{
+    background: blue;
+    flex-shrink: 3; /* This shrinks 2 times box four *//*
+}
+
+.six{
+    background: green;
+    flex-shrink: 6; /* This shrinks 3 times box four *//*
+}
+.flex-containerbis{
+    display: flex; /* Makes children flex *//*
+    background: white;
+    flex-wrap: wrap; /* Avoids that when we reach min-width of 200px x 3 times the boxes start shrinking. They wrap and go vertical*/
+    /* flex-wrap: wrap-reverse;  *//*
+}
+
+.boxthree{
+    height: 100px;
+    flex-basis: 200px; /* The difference between min-width and flex-basis is that with min-width once reach 200px the box is not going to shrink more but with flex-basis it is */
+    /* min-width: 200px;  */
+    /* flex-grow: 1; /* Makes the box when wraps occupy all the space respecting min-width anyway *//*
+}
+
+.seven{
+    background: red;
+}
+
+.eigth{
+    background: blue;
+}
+
+.nine{
+    background: green;
+}
+*/

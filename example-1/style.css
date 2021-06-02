@@ -15,7 +15,38 @@ body{
 
 /* menu base styles */
 
+nav {
+    background: #333;
+}
 
+nav ul {
+    list-style-type: none; /* Removes bullets */
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none; /* Removes underlying text */
+    text-align: center; 
+    color: white;
+    display: block;
+    padding: 10px;
+}
+
+nav a:hover { /* When hovers changes the background */
+    background-color: #555;
+}
 
 
 /* flex styles */
+
+@media screen and (min-width: 768px) { /* From 768px and higher */
+
+    nav ul{
+        display: flex; /* The menu is now horizontal instead of vertical */
+        justify-content: flex-start;
+    }
+    
+    nav li{
+        flex: 1 1 0; /* The menu occupais all the space and grows and shrinks together */
+    }
+}
